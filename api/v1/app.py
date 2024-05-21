@@ -2,7 +2,7 @@
 """ app.py module """
 
 from models import storage
-from lask import Flask, make_response
+from flask import Flask, make_response
 from os import getenv
 from api.v1.views import app_views
 from flask_cors import CORS

@@ -11,15 +11,18 @@ app = Flask(__name__)
 app.register_blueprint(app_views)
 CORS(app, resources={r"/*": {"origins": "0.0.0.0"}})
 
+
 @app.teardown_appcontext
 def teardown_appcontext(exception):
     """ close  storage """
     storage.close()
 
+
 @app.errorhandler(404)
 def handle_error(error):
     """ returns JSON object ass error message """
     return make_response({"error": "Not found"}, 404)
+
 
 if __name__ == "__main__":
     HBNB_API_HOST = getenv('HBNB_API_HOST')

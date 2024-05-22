@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" index module 
+""" index module
 """
 
 from api.v1.views import app_views
